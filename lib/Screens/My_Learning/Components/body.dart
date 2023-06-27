@@ -1,5 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:udemy/constants/colors.dart';
 
@@ -17,7 +16,7 @@ class Body extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
+                const Text(
                   "My courses",
                   style: TextStyle(
                       fontSize: 18,
@@ -28,14 +27,14 @@ class Body extends StatelessWidget {
                   children: [
                     IconButton(
                         onPressed: () {},
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.search,
                           color: defaultColor,
                         )),
-                    SizedBox(width: 3),
+                    const SizedBox(width: 3),
                     IconButton(
                         onPressed: () {},
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.shopping_cart_outlined,
                           color: defaultColor,
                         ))
@@ -52,12 +51,15 @@ class Body extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    width: 90,
-                    height: 60,
-                    color: defaultColor,
-                  ),
-                  SizedBox(width: 10),
-                  Expanded(
+                      width: 90,
+                      height: 60,
+                      color: defaultColor,
+                      child: CachedNetworkImage(
+                        imageUrl:
+                            "https://img-c.udemycdn.com/course/750x422/4152490_1047_6.jpg",
+                      )),
+                  const SizedBox(width: 10),
+                  const Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [

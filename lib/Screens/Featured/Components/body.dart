@@ -1,12 +1,6 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
-import 'dart:ffi';
-
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:udemy/Screens/Featured/Components/browse_card.dart';
-import 'package:udemy/Screens/Featured/Components/course_card.dart';
 import 'package:udemy/Screens/Featured/Components/list_of_coursecard.dart';
 import 'package:udemy/constants/colors.dart';
 
@@ -48,7 +42,7 @@ class Body extends StatelessWidget {
                   alignment: Alignment.centerRight,
                   child: IconButton(
                       onPressed: () {},
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.shopping_cart_outlined,
                         color: defaultColor,
                       )),
@@ -57,28 +51,28 @@ class Body extends StatelessWidget {
               CachedNetworkImage(
                   imageUrl:
                       "https://thelogicalindian.com/h-upload/2021/07/05/198685-untitled-design-53.jpg"),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       "Learning that fits",
-                      style: GoogleFonts.adamina(
-                          textStyle: TextStyle(
-                              color: defaultColor,
-                              fontSize: 32,
-                              fontWeight: FontWeight.w600)),
+                      // style: GoogleFonts.adamina(
+                      //     textStyle: const TextStyle(
+                      //         color: defaultColor,
+                      //         fontSize: 32,
+                      //         fontWeight: FontWeight.w600)),
                     ),
-                    Text(
+                    const Text(
                       "Skills for your present (and future)",
                       style: TextStyle(color: defaultColor, fontSize: 16),
                     ),
                     Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
+                          const Text(
                             "Catogeries",
                             style: TextStyle(
                                 fontSize: 20,
@@ -87,7 +81,7 @@ class Body extends StatelessWidget {
                           ),
                           TextButton(
                               onPressed: () {},
-                              child: Text(
+                              child: const Text(
                                 "see all",
                                 style: TextStyle(color: secondaryColor),
                               ))
@@ -103,11 +97,11 @@ class Body extends StatelessWidget {
                                 Padding(
                                   padding: const EdgeInsets.only(left: 4.0),
                                   child: Chip(
-                                    side: BorderSide(color: defaultColor),
+                                    side: const BorderSide(color: defaultColor),
                                     backgroundColor: bgColor,
                                     label: Text(
                                       i,
-                                      style: TextStyle(color: defaultColor),
+                                      style: const TextStyle(color: defaultColor),
                                     ),
                                   ),
                                 )
@@ -120,11 +114,11 @@ class Body extends StatelessWidget {
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 4.0),
                                   child: Chip(
-                                    side: BorderSide(color: defaultColor),
+                                    side: const BorderSide(color: defaultColor),
                                     backgroundColor: bgColor,
                                     label: Text(
                                       i,
-                                      style: TextStyle(color: defaultColor),
+                                      style: const TextStyle(color: defaultColor),
                                     ),
                                   ),
                                 )
@@ -133,7 +127,7 @@ class Body extends StatelessWidget {
                         ],
                       ),
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     BrowseCard(
                       label: "Design",
                       listCourses: CardList().cards,
@@ -156,24 +150,25 @@ class Body extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Text("Top companies trust udemy",
-                              style: GoogleFonts.playfairDisplay(
-                                  textStyle: const TextStyle(
-                                      color: defaultColor,
-                                      fontSize: 26,
-                                      fontWeight: FontWeight.bold))),
+                          const Text("Top companies trust udemy",
+                              // style: GoogleFonts.playfairDisplay(
+                              //     textStyle: const TextStyle(
+                              //         color: defaultColor,
+                              //         fontSize: 26,
+                              //         fontWeight: FontWeight.bold))
+                                      ),
                           Image.asset(
                             "asset/images/companies.jpg",
                             width: 500,
                           ),
-                          Text(
+                          const Text(
                             "Try Udemy Business",
                             style: TextStyle(color: secondaryColor),
                           )
                         ],
                       ),
                     ),
-                    SizedBox(height: 30),
+                    const SizedBox(height: 30),
                     BrowseCard(
                       label: "IT & Software",
                       listCourses: CardList().cards,

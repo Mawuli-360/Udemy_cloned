@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:udemy/Screens/detailed_page.dart';
 import 'package:udemy/constants/colors.dart';
 
 class CourseCard extends StatelessWidget {
@@ -26,9 +27,13 @@ class CourseCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CachedNetworkImage(
-                imageUrl:
-                    "https://uploads-ssl.webflow.com/5f841209f4e71b2d70034471/60bb4a2e143f632da3e56aea_Flutter%20app%20development%20(2).png"),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const DetailedPage()));
+              },
+              child: CachedNetworkImage(imageUrl: image),
+            ),
             Text(
               description,
               maxLines: 2,

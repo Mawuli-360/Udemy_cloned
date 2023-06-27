@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:udemy/constants/colors.dart';
 
@@ -40,6 +41,10 @@ class Body extends StatelessWidget {
                 Container(
                   height: 300,
                   color: defaultColor,
+                  child: CachedNetworkImage(
+                    imageUrl:
+                        "https://s.udemycdn.com/browse_components/flyout/empty-shopping-cart-v2.jpg",
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(10.0),

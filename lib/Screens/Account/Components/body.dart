@@ -1,4 +1,3 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import 'package:udemy/constants/colors.dart';
@@ -17,7 +16,7 @@ class Body extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
+                const Text(
                   "Account",
                   style: TextStyle(
                       color: defaultColor,
@@ -26,7 +25,7 @@ class Body extends StatelessWidget {
                 ),
                 IconButton(
                     onPressed: () {},
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.shopping_cart_outlined,
                       color: defaultColor,
                     ))
@@ -56,20 +55,20 @@ class Body extends StatelessWidget {
                 buildTile(label: "Share the Udemy app"),
                 headLabel(context, label: "Diagnostics"),
                 buildTile(label: "Status"),
-                Center(
+                const Center(
                     child: Text("Sign out",
                         style: TextStyle(
                             color: secondaryColor,
                             fontSize: 22,
                             fontWeight: FontWeight.bold))),
-                SizedBox(height: 15),
-                Center(
+                const SizedBox(height: 15),
+                const Center(
                   child: Text(
                     "udemy v8.8.0",
                     style: TextStyle(color: unSelectedColor),
                   ),
                 ),
-                SizedBox(height: 100)
+                const SizedBox(height: 100)
               ],
             ),
           ))
@@ -85,7 +84,7 @@ class Body extends StatelessWidget {
         label,
         style: Theme.of(context)
             .textTheme
-            .subtitle1!
+            .titleMedium!
             .copyWith(color: unSelectedColor, fontWeight: FontWeight.bold),
       ),
     );
@@ -93,8 +92,8 @@ class Body extends StatelessWidget {
 
   ListTile buildTile({required String label}) {
     return ListTile(
-      title: Text(label, style: TextStyle(color: defaultColor, fontSize: 18)),
-      trailing: Icon(Icons.arrow_forward_ios_outlined, color: unSelectedColor),
+      title: Text(label, style: const TextStyle(color: defaultColor, fontSize: 18)),
+      trailing: const Icon(Icons.arrow_forward_ios_outlined, color: unSelectedColor),
     );
   }
 }

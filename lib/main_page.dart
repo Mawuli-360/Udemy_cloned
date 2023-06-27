@@ -23,18 +23,6 @@ class _MainPageState extends State<MainPage> {
     const Account()
   ];
 
-  final List<BottomNavigationBarItem> _items = [
-    const BottomNavigationBarItem(
-        icon: Icon(Icons.star_border_outlined), label: "Featured"),
-    const BottomNavigationBarItem(
-        icon: Icon(Icons.search_outlined), label: "Search"),
-    const BottomNavigationBarItem(
-        icon: Icon(Icons.play_circle_outline), label: "My Learning"),
-    const BottomNavigationBarItem(
-        icon: Icon(Icons.favorite_border_outlined), label: "Wishlist"),
-    const BottomNavigationBarItem(
-        icon: Icon(Icons.person_outline_rounded), label: "Account"),
-  ];
   int currentPage = 0;
 
   void _changedPage(int index) {
@@ -45,6 +33,34 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
+    final List<BottomNavigationBarItem> items = [
+      BottomNavigationBarItem(
+          icon: currentPage == 0
+              ? const Icon(Icons.star)
+              : const Icon(Icons.star_border_outlined),
+          label: "Featured"),
+      BottomNavigationBarItem(
+          icon: currentPage == 1
+              ? const Icon(Icons.search)
+              : const Icon(Icons.search_outlined),
+          label: "Search"),
+      BottomNavigationBarItem(
+          icon: currentPage == 2
+              ? const Icon(Icons.play_circle_fill)
+              : const Icon(Icons.play_circle_outline),
+          label: "My Learning"),
+      BottomNavigationBarItem(
+          icon: currentPage == 3
+              ? const Icon(Icons.favorite)
+              : const Icon(Icons.favorite_border_outlined),
+          label: "Wishlist"),
+      BottomNavigationBarItem(
+          icon: currentPage == 4
+              ? const Icon(Icons.person)
+              : const Icon(Icons.person_outline_rounded),
+          label: "Account"),
+    ];
+
     return Scaffold(
       body: pages[currentPage],
       bottomNavigationBar: BottomNavigationBar(
@@ -53,7 +69,7 @@ class _MainPageState extends State<MainPage> {
         type: BottomNavigationBarType.fixed,
         unselectedItemColor: unSelectedColor,
         backgroundColor: bgColor,
-        items: _items,
+        items: items,
         onTap: _changedPage,
       ),
     );
